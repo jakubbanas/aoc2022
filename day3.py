@@ -14,3 +14,13 @@ for rucksack in input_data:
         result += points.index(duplicate)
 
 print(result)
+
+group_by_3 = lambda items: list(zip(*[iter(items)] * 3))
+
+result = 0
+for a, b, c in group_by_3(input_data):
+    duplicate = [n for n in a if b.count(n) >= 1 and c.count(n) >= 1][0]
+    if duplicate:
+        result += points.index(duplicate)
+
+print(result)
